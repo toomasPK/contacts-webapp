@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Contact} from '../contact';
-import {ContactService} from '../contact.service';
+import {ContactService} from '../services/contact.service';
 
 @Component({
   selector: 'cw-contact-list',
@@ -19,7 +19,10 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts = this.contactService.getContacts();
+    this.contactService.getContact().subscribe(response => {
+      this.contacts = response;
+      console.log(this.contacts);
+    });
   }
 
 }
