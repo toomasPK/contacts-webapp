@@ -2,7 +2,7 @@ export class Contact {
   id: number;
   firstName: string;
   lastName: string;
-  streetAdress: string;
+  streetAddress: string;
   city: string;
   postalCode: string;
   phoneNumber: string;
@@ -10,12 +10,12 @@ export class Contact {
 
 
 
-  constructor (id?: number, firstName?: string, lastName?: string, streetAdress?: string, city?: string, postalCode?: string, phoneNumber?:
+  constructor (id?: number, firstName?: string, lastName?: string, streetAddress?: string, city?: string, postalCode?: string, phoneNumber?:
   string, emailAddress?: string) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.streetAdress = streetAdress;
+    this.streetAddress = streetAddress;
     this.city = city;
     this.postalCode = postalCode;
     this.phoneNumber = phoneNumber;
