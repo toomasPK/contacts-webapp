@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ContactService} from '../services/contact.service';
 import {Contact} from '../contact';
-import {error} from 'selenium-webdriver';
 
 @Component({
   selector: 'cw-contact-detail',
@@ -21,10 +20,8 @@ export class ContactDetailComponent implements OnInit {
     this.contactService.getContactById(contactId).subscribe(response => {
       this.contact = response;
       console.log(this.contact);
-    ), error => {
-      console.error('Getting contact failed!');
-      console.error(error);
-      };
+
+    });
   }
 
   onNavigateBack(): void {
