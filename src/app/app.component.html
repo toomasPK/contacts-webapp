@@ -1,3 +1,30 @@
-<div>
-  <router-outlet></router-outlet>
-</div>
+<mat-sidenav-container class="cw.sidenav-container">
+  <mat-sidenav #sidenav align="start" [mode]="'over'" [opened]="false" class="cw-sidenav">
+    <div>
+      <div fxLayout="column" fxLayoutAlign="center center" class="cw-sidenav-user-area">
+        <div>
+          <div>
+            <mat-icon class="cw-sidenav-avatar" color="primary">account_circle</mat-icon>
+          </div>
+          <div>
+          <span>Toomas Karvinen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span>Sidenav content</span>
+  </mat-sidenav>
+  <div>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon class="mat-18">menu</mat-icon>
+      </button>
+      <span>Contact application</span>
+    </mat-toolbar>
+    <div class="cw-app-container">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-sidenav-container>
+
+
