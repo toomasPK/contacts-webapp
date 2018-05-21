@@ -1,4 +1,4 @@
-<mat-sidenav-container class="cw.sidenav-container">
+<mat-sidenav-container class="cw-sidenav-container">
   <mat-sidenav #sidenav align="start" [mode]="'over'" [opened]="false" class="cw-sidenav">
     <div>
       <div fxLayout="column" fxLayoutAlign="center center" class="cw-sidenav-user-area">
@@ -14,7 +14,8 @@
     </div>
     <span>Sidenav content</span>
   </mat-sidenav>
-  <div>
+
+  <div fxFlexFill class="cw-sidenav-content">
     <mat-toolbar color="primary">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon class="mat-18">menu</mat-icon>
