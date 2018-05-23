@@ -1,7 +1,12 @@
 <mat-card class="cw-card-layout">
-  <button mat-icon-button (click)="onNavigateBack()">
-    <mat-icon>arrow_back</mat-icon>
-   </button>
+
+
+  <mat-card-actions *ngIf="editingEnabled && contactId" align="end">
+    <button mat-icon-button (click)="onDelete()" color="primary">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+  </mat-card-actions>
 
   <div fxLayout="row" fxLayoutAlign="center start">
   <div fxLayout="column" class="cw-contact-detail-fields ">
@@ -13,7 +18,7 @@
            [readonly]="!editingEnabled">
   </mat-form-field>
 
-s  <mat-form-field floatPlaceholder="auto">
+  <mat-form-field floatPlaceholder="auto">
     <input matInput [(ngModel)]="contact.lastName"
            type="text"
            required
@@ -45,6 +50,14 @@ s  <mat-form-field floatPlaceholder="auto">
            [readonly]="!editingEnabled">
   </mat-form-field>
 
+    <mat-form-field floatPlaceholder="auto">
+      <input matInput [(ngModel)]="contact.postalCode"
+             type="text"
+             required
+             placeholder="Postal code"
+             [readonly]="!editingEnabled">
+    </mat-form-field>
+
   <mat-form-field floatPlaceholder="auto">
     <input matInput [(ngModel)]="contact.city"
            type="text"
@@ -58,6 +71,6 @@ s  <mat-form-field floatPlaceholder="auto">
 
 </mat-card>
 
-<button *ngIf="editingEnabled" mat-fab (click)="onSave" class="cw-fab" [disabled]="!editingEnabled">
+<button *ngIf="editingEnabled" mat-fab (click)="onSave()" class="cw-fab">
   <mat-icon class="mat-18">check</mat-icon>
 </button>
