@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
-  <button *ngIf="options.backEnable" mat-icon-button (click)="onMenuClick()">
-    <mat-icon> menu</mat-icon>
+  <button *ngIf="!options.backEnable" mat-icon-button (click)="onMenuClick()">
+    <mat-icon>menu</mat-icon>
   </button>
   <button *ngIf="options.backEnable" mat-icon-button (click)="onNavigateBack()">
-    <mat-icon> arrow_back</mat-icon>
+    <mat-icon>arrow_back</mat-icon>
   </button>
   <span fxFlex>{{options.title}}</span>
   <button mat-icon-button (click)="action.runAction()" *ngFor="let action of options.actions">
